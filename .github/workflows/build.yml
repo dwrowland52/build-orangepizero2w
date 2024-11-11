@@ -3,9 +3,11 @@ on:
   workflow_dispatch:
 jobs:
   build-armbian:
+    name: "Setting up OS"
     runs-on: ubuntu-latest
     steps:
-      - uses: armbian/build@2cd46aceb5571db4746fdac9a32a5755f360b26b
+      - name: "Build"
+        uses: armbian/build@2cd46aceb5571db4746fdac9a32a5755f360b26b
         with:
           armbian_token:     "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
           armbian_release:   "jammy"                        # userspace
