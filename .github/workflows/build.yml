@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Build"
-        uses: armbian/build@v25.2.0-trunk.3
+        uses: armbian/build@main
     
         with:
           armbian_token:     "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
