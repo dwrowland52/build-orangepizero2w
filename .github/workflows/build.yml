@@ -6,6 +6,12 @@ jobs:
     name: "Setting up OS"
     runs-on: ubuntu-latest
     steps:
+
+      - name: "Clear cache"
+        uses: actions/checkout@main
+        with:
+          fetch-depth: 0
+
       - name: "Build"
         uses: armbian/build@main
     
