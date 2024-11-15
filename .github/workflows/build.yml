@@ -7,22 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: "Clear cache"
-        uses: actions/checkout@main
-        with:
-          fetch-depth: 0
-
-      - name: List repository files
-        run: ls; pwd
+      # - name: List repository files
+      #   run: ls; pwd
         
-      # - name: "Build"
-      #   uses: ./action.yml
+      - name: "Build"
+        uses: ./
     
-      #   with:
-      #     armbian_token:     "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
-      #     armbian_release:   "jammy"                        # userspace
-      #     armbian_target:    "build"                        # build=image, kernel=kernel
-      #     armbian_board:     "orangepizero2w"               # build target
-      #     armbian_ui:        "server"                       # Selecting server over desktop
-      #     armbian_artifacts: "build/output/images/"         # Location for artifacts to build
-      #     armbian_compress:  "xz"                           # Compress output image so it will upload
+        with:
+          armbian_token:     "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
+          armbian_release:   "jammy"                        # userspace
+          armbian_target:    "build"                        # build=image, kernel=kernel
+          armbian_board:     "orangepizero2w"               # build target
+          armbian_ui:        "server"                       # Selecting server over desktop
+          armbian_artifacts: "build/output/images/"         # Location for artifacts to build
+          armbian_compress:  "xz"                           # Compress output image so it will upload
