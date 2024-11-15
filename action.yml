@@ -111,7 +111,7 @@ runs:
         passphrase: ${{ inputs.armbian_pgp_password }}
 
     - name: "Checkout Armbian os"
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
       with:
         repository: armbian/os
         fetch-depth: 0
@@ -119,7 +119,7 @@ runs:
         path: os
 
     - name: "Checkout Armbian build framework"
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
       with:
         repository: armbian/build
         fetch-depth: 0
@@ -127,7 +127,7 @@ runs:
         path: build
 
     - name: "Checkout customisations"
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
         clean: false
