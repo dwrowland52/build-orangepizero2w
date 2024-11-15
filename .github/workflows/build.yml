@@ -12,8 +12,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: List repository files
+        run: ls -R
+        
       - name: "Build"
-        uses: ./action.yaml
+        uses: ./action.yml
     
         with:
           armbian_token:     "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
